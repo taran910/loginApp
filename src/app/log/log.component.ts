@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router,RouterModule, Routes } from "@angular/router";
 @Component({
   selector: 'app-log',
   templateUrl: './log.component.html',
@@ -8,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 export class LogComponent implements OnInit {
   username:String;
   password:String;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -16,10 +17,10 @@ export class LogComponent implements OnInit {
     if(this.username=="Admin" && this.password=="getmein")
     {
       console.log("welcome");
+      this.router.navigate(['/user']);
     }
     else{
       alert("wrong credentials");
-      console.log(this.username)
     }
   }
 
