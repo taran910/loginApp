@@ -1,1 +1,24 @@
-<p>user works!</p>
+<h1 id="headin">Registered Employees</h1>
+
+<table class="table" id='tab'>
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Position</th>
+        <th scope="col">Office</th>
+        <th scope="col">Salary</th>
+        <th scope='col'>Edit</th>
+        <th scope='col'>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of emp.array">
+        <th scope="row">{{ e.name }}</th>
+        <td>{{ e.position }}</td>
+        <td>{{ e.office }}</td>
+        <td>{{ e.salary }}</td>
+        <td> <button class="btn btn-success">Edit</button> </td>
+        <td> <button class="btn btn-danger">Delete</button> </td>
+    </tr>
+    </tbody>
+  </table>

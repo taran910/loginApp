@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LogComponent } from './log/log.component';
 import { UserComponent } from './user/user.component';
 import { Routes,RouterModule } from '@angular/router';
+import { ListService } from './user.service';
 
 const appRoutes: Routes =[
   { path: '',component: LogComponent },
@@ -24,7 +25,9 @@ const appRoutes: Routes =[
     FormsModule,
     RouterModule.forRoot(appRoutes) ,  
   ],
-  providers: [],
+  providers: [
+    ListService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
