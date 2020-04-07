@@ -12,13 +12,56 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let e of emp.array">
+      <tr *ngFor="let e of li; index as i">
         <th scope="row">{{ e.name }}</th>
         <td>{{ e.position }}</td>
         <td>{{ e.office }}</td>
         <td>{{ e.salary }}</td>
-        <td> <button class="btn btn-success">Edit</button> </td>
-        <td> <button class="btn btn-danger">Delete</button> </td>
+        <td> <button class="btn btn-success" (click)="openForm(i)">{{ e.edit }}</button> </td>
+        <td> <button class="btn btn-danger" (click)="deleteEmp(i,e.name)">{{ e.delete }}</button> </td>
     </tr>
     </tbody>
   </table>
+  <form id="popup">
+    <div class="form-group">
+      <label for="exampleInputEmail1" >Name</label>
+      <input type="email" class="form-control" [(ngModel)]="nam" name="nam" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Position</label>
+      <input type="email" class="form-control" [(ngModel)]="pos" name="pos" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Office</label>
+      <input type="email" class="form-control" [(ngModel)]="off" name="off" id="editinput" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Salary</label>
+      <input type="email" class="form-control" [(ngModel)]="sal" name="sal" id="editinput" aria-describedby="emailHelp">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="closeForm()">Save</button>
+  </form>
+  <br>
+  <br>
+  <br>
+  <form id="popup1">
+    <div class="form-group">
+      <label for="exampleInputEmail1" >Name</label>
+      <input type="email" class="form-control" [(ngModel)]="nam" name="nam" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Position</label>
+      <input type="email" class="form-control" [(ngModel)]="pos" name="pos" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Office</label>
+      <input type="email" class="form-control" [(ngModel)]="off" name="off" id="editinput" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Salary</label>
+      <input type="email" class="form-control" [(ngModel)]="sal" name="sal" id="editinput" aria-describedby="emailHelp">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="save()">Save</button>
+  </form>
+  
+  <h3 id="headin">Add An Employee  <button class="btn btn-primary" (click)="Form()">Add</button></h3>
